@@ -76,18 +76,15 @@ export default function StickerResult() {
       });
 
       await uploadImageToServer(originalImage, villagerName);
-      console.log("✅ 원본 업로드 완료");
 
-      // 두 번째 캡처 — 리사이즈/자른 버전 (예: 420x650)
+      // 두 번째 캡처 — 리사이즈/자른 버전
       const resizedImage = await toPng(stickerFrameRef.current, {
         quality: 0.95,
-        width: 420,   // 원하는 출력 가로
-        height: 650,  // 원하는 출력 세로
+        width: 420,   // 가로 크기
+        height: 650,  // 세로 크기
         backgroundColor: null,
         skipFonts: true,
       });
-
-      console.log("✅ 리사이즈된 이미지 생성 완료");
 
       // Send 페이지로 이동 (리사이즈 버전 전달)
       navigate("/send", { state: { image: resizedImage } });

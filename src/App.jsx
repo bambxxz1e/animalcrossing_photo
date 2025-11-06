@@ -6,7 +6,6 @@ import Twophoto from "./twophoto";
 import Fourphoto from "./fourphoto";
 import Fivephoto from "./fivephoto";
 import Takephoto from "./Take_photo";
-import Result from "./Result";
 import StickerResult from "./StickerResult.jsx";
 import Gallery from "./Gallery.jsx";
 import SendImg from "./SendImg.jsx";
@@ -23,7 +22,6 @@ function App() {
         <Route path="/fourphoto" element={<Fourphoto />} />
         <Route path="/fivephoto" element={<Fivephoto />} />
         <Route path="/take-photo" element={<Takephoto />} />
-        <Route path="/result" element={<Result />} />
         <Route path="/sticker" element={<StickerResult />} />
         <Route path="/send" element={<SendImg />} />
       </Routes>

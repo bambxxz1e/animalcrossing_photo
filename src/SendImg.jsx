@@ -8,7 +8,7 @@ import SendButton from "./img/send_button.png"
 export default function SendImg() {
   const navigate = useNavigate();
   const location = useLocation();
-  const passedImage = location.state?.image || ""; // data:image/png;base64,... 형태
+  const passedImage = location.state?.image || "";
 
   const [imageBase64, setImageBase64] = useState(passedImage);
   const [toName, setToName] = useState("");
@@ -72,7 +72,7 @@ export default function SendImg() {
 	};
 
 
-  // 제출 처리: passedImage를 압축(또는 그대로)해서 EmailJS로 전송
+  // passedImage를 압축해서 EmailJS로 전송
   const handleSubmit = async (e) => {
 	e.preventDefault();
 	if (!passedImage) {
