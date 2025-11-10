@@ -83,11 +83,11 @@ export default function SendImg() {
 
 	try {
 		// 압축이 완료될 때까지 기다림 (await 꼭 붙여야 함)
-		console.log("🌀 이미지 압축 중...");
+		console.log("이미지 압축 중...");
 		const compressed = await compressDataUrl(passedImage, 800, 40); // 40KB 목표
 		const finalBase64 = compressed || passedImage;
 		console.log(
-		`✅ 압축 완료 (${(finalBase64.length / 1024).toFixed(1)}KB)`
+		`압축 완료 (${(finalBase64.length / 1024).toFixed(1)}KB)`
 		);
 
 		await emailjs.send(
@@ -107,7 +107,7 @@ export default function SendImg() {
 		navigate("/gallery");
 		} catch (err) {
 			console.error("전송 실패:", err);
-			console.error("🔍 상세 오류 코드:", err.status, err.text);
+			console.error("상세 오류 코드:", err.status, err.text);
 			alert(`❌ 이메일 전송 실패 (${err.status || "no status"})`);
 		} finally {
 			setBusy(false);
